@@ -27,7 +27,8 @@ public class App {
         try {
             System.out.println("Test task for smartfort from Afanasyeu Alexei");
 
-            ResourceConfig resourceConfig = new ResourceConfig(ControllerConfig.class, JacksonConfigurator.class);
+            ResourceConfig resourceConfig = new ResourceConfig();
+            resourceConfig.register(JacksonConfigurator.class).register(ControllerConfig.class);
             final Channel server = NettyHttpContainerProvider.createHttp2Server(BASE_URI, resourceConfig, null);
 
             Runtime.getRuntime().addShutdownHook(new Thread(server::close));

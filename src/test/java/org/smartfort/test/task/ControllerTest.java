@@ -12,6 +12,7 @@ import org.glassfish.jersey.test.spi.TestContainerException;
 import org.glassfish.jersey.test.spi.TestContainerFactory;
 import org.glassfish.jersey.test.util.runner.ConcurrentRunner;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.smartfort.test.task.controller.App;
@@ -102,6 +103,7 @@ public class ControllerTest extends JerseyTest {
 
 
     @Test
+    @Ignore
     public void testGetUserById(){
         int id = 1;
         String firstName = "fname";
@@ -119,6 +121,7 @@ public class ControllerTest extends JerseyTest {
     }
 
     @Test
+    @Ignore
     public void testAsyncClientRequests() throws InterruptedException {
         final int REQUESTS = 10;
         final CountDownLatch latch = new CountDownLatch(REQUESTS);
